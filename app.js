@@ -19,7 +19,7 @@
 
   function money(value, compact = false) {
     const number = Number(value) || 0;
-    const sign = number > 0 ? '+' : number < 0 ? '' : '';
+    const sign = number > 0 ? '+' : number < 0 ? '-' : '';
     const absolute = Math.abs(number);
     if (compact && absolute >= 1000000) return sign + '$' + (absolute / 1000000).toFixed(2) + 'M';
     if (compact && absolute >= 1000) return sign + '$' + (absolute / 1000).toFixed(1) + 'K';
@@ -52,7 +52,7 @@
     ui.pnlValue.textContent = money(data.pnl.current);
     setValueClass(ui.dailyPnl, data.empire.daily);
     setValueClass(ui.pnlValue, data.pnl.current);
-    ui.wanted.textContent = ''.repeat(data.wanted) + ''.repeat(5 - data.wanted);
+    ui.wanted.textContent = data.wanted + ' / 5';
     ui.targetPercent.textContent = (data.empire.progress * 100).toFixed(1) + '%';
     ui.targetFill.style.width = Math.min(100, data.empire.progress * 100) + '%';
     const history = data.pnl.history;
@@ -291,7 +291,7 @@
     const loss = step % 5 === 0;
     const badge = document.createElement('b');
     badge.className = 'cash-packet ' + (loss ? 'loss' : 'gain');
-    badge.textContent = (loss ? '$' : '+$') + (loss ? Math.round(gain * .35) : gain);
+    badge.textContent = (loss ? '-$' : '+$') + (loss ? Math.round(gain * .35) : gain);
     badge.style.left = source.left + source.width / 2 + 'px';
     badge.style.top = source.top + 'px';
     badge.style.setProperty('--cash-x', target.left - source.left + target.width / 2 + 'px');
@@ -339,4 +339,3 @@
   window.addEventListener('resize', () => state && drawPnl(state.pnl.history));
   requestAnimationFrame(animateAgents);
 })();
-
