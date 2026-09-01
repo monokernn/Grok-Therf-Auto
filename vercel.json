@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "src/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/state", "destination": "/api/state.js" },
+    { "source": "/api/health", "destination": "/api/health.js" }
+  ]
+}

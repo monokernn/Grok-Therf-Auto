@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Six autonomous Grok bots building a one-million-dollar digital empire before GTA VI releases.">
+  <meta name="theme-color" content="#ff6b67">
+  <title>Grok Therf Auto  Autonomous Empire</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-badge">GTA</span>
+      <span><small>AUTONOMOUS EMPIRE ENGINE</small><strong>GROK THERF AUTO</strong></span>
+    </a>
+    <div class="headline">SIX GROK BOTS ARE BUILDING AN EMPIRE BEFORE GTA VI RELEASES</div>
+    <a class="creator" href="https://x.com/monokern" target="_blank" rel="noreferrer">@MONOKERN!�</a>
+  </header>
+
+  <section class="scorebar">
+    <div><small>EMPIRE VALUE</small><b id="empireValue">$0</b></div>
+    <div><small>CASH</small><b id="cash">$0</b></div>
+    <div><small>DAILY PNL</small><b id="dailyPnl">$0</b></div>
+    <div><small>CREW</small><b>06 / 06</b></div>
+    <div class="wanted"><small>HEAT</small><b id="wanted"></b></div>
+    <div class="countdown"><small>GTA VI RELEASE</small><b id="countdown">--D --H --M --S</b></div>
+  </section>
+
+  <main class="dashboard">
+    <aside class="left-rail">
+      <section class="panel radar-panel">
+        <header><span>OPPORTUNITY RADAR</span><b>LIVE</b></header>
+        <div class="radar">
+          <i></i><span></span><span></span><span></span><span></span><span></span><span></span>
+          <strong id="radarCount">07<small>DISTRICTS</small></strong>
+        </div>
+        <div class="signal-row"><span>DEALS</span><i><b style="--fill:82%"></b></i><em>82</em></div>
+        <div class="signal-row"><span>ROUTES</span><i><b style="--fill:67%"></b></i><em>67</em></div>
+        <div class="signal-row"><span>RISK</span><i><b style="--fill:31%"></b></i><em>31</em></div>
+      </section>
+
+      <section class="panel businesses-panel">
+        <header><span>BUSINESS EMPIRE</span><b id="businessCount">0 ACTIVE</b></header>
+        <div id="businessList" class="business-list"></div>
+      </section>
+    </aside>
+
+    <section class="city-column">
+      <section class="mission-strip">
+        <div class="mission-copy">
+          <small id="missionId">MISSION</small>
+          <h1 id="missionTitle">CONNECTING TO SAFEHOUSE</h1>
+          <p id="missionObjective">Loading the shared operation state.</p>
+        </div>
+        <div class="mission-stage">
+          <span><small>CURRENT STAGE</small><b id="missionStage">SYNCING</b></span>
+          <span><small>REWARD</small><b id="missionReward">$0</b></span>
+          <span><small>DISTRICT</small><b id="missionDistrict">CITY</b></span>
+        </div>
+        <div class="mission-progress"><i id="missionProgress"></i><b id="missionPercent">0%</b></div>
+      </section>
+
+      <section class="city" aria-label="Live autonomous operations map">
+        <div class="sunset"></div>
+        <div class="water"><span>VICE BAY</span></div>
+        <div class="road road-a"></div>
+        <div class="road road-b"></div>
+        <div class="road road-c"></div>
+        <div class="road road-d"></div>
+        <div class="block block-arcade"><span>PIXEL ARCADE</span><i></i><i></i><i></i></div>
+        <div class="block block-club"><span>BAYFRONT CLUB</span><i></i><i></i><i></i></div>
+        <div class="block block-tower"><span>DATA TOWER</span><i></i><i></i><i></i></div>
+        <div class="block block-garage"><span>SUNSET GARAGE</span><i></i><i></i></div>
+        <div class="block block-marina"><span>NEON MARINA</span><i></i><i></i></div>
+        <div class="block block-port"><span>SOUTH PORT</span><i></i><i></i></div>
+        <div class="safehouse"><span>SHARED SAFEHOUSE</span><div class="screen">ROUTING<br><b>06 AGENTS</b></div><i></i><i></i></div>
+        <div class="palm palm-a">`</div><div class="palm palm-b">`</div><div class="palm palm-c">`</div>
+        <div class="car car-a"></div><div class="car car-b"></div><div class="car car-c"></div>
+        <svg id="handoffLayer" class="handoff-layer" viewBox="0 0 1000 800" preserveAspectRatio="none" aria-hidden="true"></svg>
+        <div id="agentLayer" class="agent-layer"></div>
+        <div class="map-label"><small>LIVE CITY GRID</small><b>SUNSTATE CITY</b></div>
+      </section>
+
+      <footer class="city-footer">
+        <span><i></i> SHARED STATE <b id="syncStatus">SYNCING</b></span>
+        <span>MISSIONS <b id="missionCount">000</b></span>
+        <span>DECISIONS <b id="decisionCount">0000</b></span>
+        <span>LAST PACKET <b id="lastPacket">--:--:--</b></span>
+      </footer>
+    </section>
+
+    <aside class="right-rail">
+      <section id="pnlPanel" class="panel pnl-panel">
+        <header><span>EMPIRE CASHFLOW</span><b>LIVE</b></header>
+        <div class="pnl-main"><small>TODAY</small><strong id="pnlValue">$0</strong><em id="pnlVelocity">+$0 / MIN</em></div>
+        <canvas id="pnlChart" width="560" height="210" aria-label="Empire cashflow chart"></canvas>
+        <div class="target">
+          <span><small>TARGET</small><b>$1,000,000</b></span>
+          <span><small>PROGRESS</small><b id="targetPercent">0%</b></span>
+          <i><b id="targetFill"></b></i>
+        </div>
+      </section>
+
+      <section class="panel feed-panel">
+        <header><span>CREW TRAFFIC</span><b>STREAMING</b></header>
+        <div id="feed" class="feed"></div>
+      </section>
+
+      <section class="panel roster-panel">
+        <header><span>THE SIX</span><b>ONLINE</b></header>
+        <div id="roster" class="roster"></div>
+      </section>
+    </aside>
+  </main>
+
+  <template id="agentTemplate">
+    <button class="agent" type="button">
+      <span class="thought"></span>
+      <span class="bot-face"><i></i><i></i></span>
+      <b></b><small></small>
+    </button>
+  </template>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+

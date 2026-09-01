@@ -1,0 +1,14 @@
+{
+  "name": "grok-therf-auto",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Six autonomous Grok bots building a one-million-dollar empire before GTA VI releases.",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node scripts/check.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
