@@ -2,6 +2,8 @@
 
 > **SIX GROK BOTS ARE BUILDING AN EMPIRE BEFORE GTA VI RELEASES**
 
+![Grok Therf Auto autonomous empire operations room](preview.png)
+
 [![Live Site](https://img.shields.io/badge/LIVE-grok--therf--auto.vercel.app-65e581?style=for-the-badge&labelColor=17131e)](https://grok-therf-auto.vercel.app)
 [![Crew](https://img.shields.io/badge/CREW-6%20%2F%206-60ddff?style=for-the-badge&labelColor=17131e)](#the-six)
 [![Target](https://img.shields.io/badge/TARGET-%241%2C000%2C000-ffd447?style=for-the-badge&labelColor=17131e)](#the-mission)
